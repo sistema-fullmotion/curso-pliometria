@@ -68,6 +68,12 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   .cta.block{display:block}
   /* variante vazada: usada na amostra do guia, que nao pode competir com o botao
      de compra logo acima */
+  /* foto do workshop: arquivo externo em vez de base64 como as outras. Sao 193 KB,
+     que embutidos virariam uns 260 KB dentro do HTML e atrasariam a pagina toda. */
+  .foto{margin-top:26px}
+  .foto img{width:100%;max-width:var(--read);border-radius:14px;display:block;
+            border:1px solid rgba(255,255,255,.09)}
+  .foto .cap{font-size:13px;color:var(--muted2);margin-top:12px;max-width:var(--read)}
   .cta.ghost{background:none;border:1px solid rgba(63,200,212,.5);color:var(--teal)}
   .cta.ghost:hover{background:rgba(63,200,212,.08);filter:none}
   .ctarow{margin-top:30px}
@@ -458,6 +464,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p style="color:var(--muted2);font-size:14px">É por isso que o conteúdo responde
     pergunta de quem atende, e não pergunta de prova. As dúvidas vieram de gente com
     paciente e atleta esperando na segunda-feira.</p>
+    <div class="foto">
+      <img src="img/workshop.jpg" loading="lazy"
+           alt="Participantes do workshop presencial de pliometria na Fullmotion RJ">
+      <div class="cap">O workshop presencial que originou esta formação, na unidade da
+      Fullmotion. Descalços, no tatame, porque aterrissagem se aprende sentindo o chão.</div>
+    </div>
   </section>
 
   <!-- PROFESSORES -->
