@@ -70,6 +70,17 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
      de compra logo acima */
   /* foto do workshop: arquivo externo em vez de base64 como as outras. Sao 193 KB,
      que embutidos virariam uns 260 KB dentro do HTML e atrasariam a pagina toda. */
+  /* depoimentos reais. Grid de largura livre porque os textos tem tamanhos bem
+     diferentes e forcar altura igual cortaria o maior. */
+  .depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+         gap:16px;margin-top:26px;align-items:start}
+  .depo{background:var(--surface);border:1px solid var(--line);border-radius:16px;
+        padding:24px;margin:0}
+  .depo p{font-size:14.5px;line-height:1.6;color:var(--ink);margin:0}
+  .depo cite{display:block;margin-top:16px;font-style:normal;font-weight:700;
+             font-size:14px;color:var(--teal)}
+  .depo cite span{display:block;font-weight:400;font-size:12.5px;color:var(--muted2);
+                  margin-top:2px}
   .foto{margin-top:26px}
   .foto img{width:100%;max-width:var(--read);border-radius:14px;display:block;
             border:1px solid rgba(255,255,255,.09)}
@@ -508,10 +519,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
   </section>
 
-  <!-- DEPOIMENTOS: seção proposital em branco.
-       NÃO invente depoimento. Peça a 3 ou 4 colegas fisioterapeutas ou personais que
-       assistam ao material e escrevam 2 ou 3 linhas honestas. Depois me mande que eu
-       encaixo aqui, com nome e profissão de cada um. É o elemento que mais falta na pagina. -->
+  <!-- DEPOIMENTOS: textos reais, enviados por quem esteve no workshop de 20/06/2026.
+       Publicados na integra, sem reescrita. NUNCA inventar depoimento nem inflar a lista.
+       Para acrescentar outro, basta mais um bloco .depo com nome e funcao. -->
+  <section>
+    <div class="eyebrow">Quem esteve lá</div>
+    <h2>O que disse quem passou o dia no workshop</h2>
+    <div class="rule"></div>
+    <p class="lead">Textos enviados pelos participantes do dia 20 de junho, publicados
+    como foram escritos.</p>
+    <div class="depos">
+      <blockquote class="depo">
+        <p>"Participar desse workshop foi um divisor de águas na minha prática clínica.
+        Saí com uma visão completamente diferente sobre a aplicação da pliometria e da
+        potência na reabilitação, e hoje consigo conduzir meus pacientes com muito mais
+        segurança, confiança e embasamento. É um curso que realmente transforma a forma
+        de pensar e de prescrever exercícios. Recomendo de olhos fechados para todo
+        fisioterapeuta que busca evolução profissional e resultados cada vez melhores
+        com seus pacientes."</p>
+        <cite>Paulo Eduardo Leite</cite>
+      </blockquote>
+      <blockquote class="depo">
+        <p>"O curso me proporcionou uma expansão de horizontes. Como profissional me
+        senti bastante satisfeito por rever e aprender novos métodos e técnicas que vão
+        ser utilizados para auxiliar meus pacientes em sua reabilitação."</p>
+        <cite>Ryan Cesar Rodrigues</cite>
+      </blockquote>
+      <blockquote class="depo">
+        <p>"Como estagiário, o workshop agregou muito à minha formação. O conteúdo foi
+        claro, prático e fácil de aplicar, me dando mais confiança para entender e
+        utilizar exercícios de pliometria e potência durante os treinos. Foi uma
+        experiência que fez diferença no meu aprendizado."</p>
+        <cite>Augusto José da Silva<span>Estagiário</span></cite>
+      </blockquote>
+    </div>
+  </section>
 
   <!-- OFERTA -->
   <section>
