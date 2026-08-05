@@ -56,8 +56,9 @@
   <div class="zap-obs">Se quiser trocar ideia sobre um caso, é por aqui que eu respondo.</div>
 </div>
 <script>
-  // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago, D = link solto
-  var CANAIS = { e: '(E)', f: '(F)', a: '(A)' };
+  // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago,
+  // V = veio da pagina de vendas, D = link solto
+  var CANAIS = { e: '(E)', f: '(F)', a: '(A)', v: '(V)' };
   var canal = (new URLSearchParams(location.search).get('c') || '').toLowerCase();
   var marca = CANAIS[canal] || '(D)';
   var texto = 'Quero o guia de aterrissagem ' + marca;
