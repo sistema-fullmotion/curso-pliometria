@@ -6,6 +6,18 @@
 <title>Antes do salto · guia de aterrissagem · Fullmotion</title>
 <meta name="description" content="Os 6 educativos de aterrissagem que vêm antes de qualquer pliometria. Guia liberado para fisioterapeutas e preparadores físicos.">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WX9QDQKC');</script>
+<!-- Meta pixel "Fullmotion Cursos": proprio da clinica, separado do pixel da agencia -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1046223337782977');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></noscript>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Inter,-apple-system,Arial,sans-serif;background:#0d1b26;color:#fff;
@@ -71,6 +83,12 @@
     document.getElementById(id).addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'guia_' + acao, canal: marca });
+      // PageView sozinho nao serve pra otimizar nem pra remarketing: todo mundo que
+      // carrega a pagina dispara. O que vale e quem abriu o guia e quem foi conversar.
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', acao === 'abriu' ? 'GuiaAberto' : 'GuiaWhatsApp',
+            { canal: marca });
+      }
     });
   }
   medir('abrir', 'abriu');
