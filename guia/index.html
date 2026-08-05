@@ -56,6 +56,14 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
         border:1px solid #2a3f52;color:#c4d2dc;font-weight:700;font-size:16px;
         text-decoration:none}
   .zap-obs{color:#5d6d7b;font-size:13px;margin-top:12px;text-align:center;line-height:1.5}
+  /* prova visual, abaixo dos botoes de proposito: a pagina tem um trabalho so,
+     que e o clique. Video acima empurraria o botao pra baixo da dobra. */
+  .prova{margin-top:44px;border-top:1px solid #1c2c3a;padding-top:32px;text-align:center}
+  .prova h2{font-size:19px;font-weight:800;letter-spacing:-.3px}
+  .prova p{color:#8fa1b0;font-size:14px;margin-top:8px;line-height:1.5}
+  .prova video{width:100%;max-width:250px;border-radius:14px;margin-top:20px;
+               display:block;margin-left:auto;margin-right:auto;
+               border:1px solid #1c2c3a;background:#08090B}
 </style>
 </head>
 <body>
@@ -78,6 +86,15 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
 
   <a class="zap" id="cta" href="#">Prefiro receber no WhatsApp</a>
   <div class="zap-obs">Se quiser trocar ideia sobre um caso, é por aqui que eu respondo.</div>
+
+  <div class="prova">
+    <h2>É disso que o guia trata</h2>
+    <p>Queda do step, queda da caixa e uma perna só, os três primeiros degraus da
+    progressão, gravados na clínica.</p>
+    <video id="prova" src="../img/guia-progressao.mp4" poster="../img/guia-progressao.jpg"
+           muted autoplay loop playsinline preload="metadata"
+           aria-label="Três exercícios de aterrissagem executados em sequência"></video>
+  </div>
 </div>
 <script>
   // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago,
@@ -105,6 +122,20 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   }
   medir('abrir', 'abriu');
   medir('cta', 'whatsapp');
+
+  // o atributo autoplay nao dispara aqui: o video fica abaixo da dobra e o
+  // navegador adia. Entao toca na mao quando ele entra na tela, e pausa quando
+  // sai, que tambem economiza bateria e dados de quem nao rolou ate ele.
+  (function () {
+    var v = document.getElementById('prova');
+    if (!v) return;
+    if (!('IntersectionObserver' in window)) { v.play().catch(function () {}); return; }
+    new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+      });
+    }, { threshold: 0.35 }).observe(v);
+  })();
 </script>
 </body>
 </html>

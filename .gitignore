@@ -1,1 +1,11 @@
 ﻿img/anuncios/
+
+# videos brutos: material de trabalho, nao vao para o site
+*.MOV
+*.mov
+*.MP4
+*.mp4
+img_artes/
+
+# excecao: video ja comprimido que o site serve de verdade
+!img/guia-progressao.mp4
