@@ -25,6 +25,13 @@
         padding:20px;border-radius:10px;font-weight:800;font-size:18px;
         text-decoration:none;margin-top:8px}
   .obs{color:#7a8794;font-size:13px;margin-top:16px;text-align:center}
+  .ou{display:flex;align-items:center;gap:14px;margin:30px 0 22px;
+      color:#5d6d7b;font-size:13px}
+  .ou::before,.ou::after{content:"";flex:1;height:1px;background:#1c2c3a}
+  a.zap{display:block;text-align:center;padding:17px;border-radius:10px;
+        border:1px solid #2a3f52;color:#c4d2dc;font-weight:700;font-size:16px;
+        text-decoration:none}
+  .zap-obs{color:#5d6d7b;font-size:13px;margin-top:12px;text-align:center;line-height:1.5}
 </style>
 </head>
 <body>
@@ -40,8 +47,13 @@
     <li>O critério objetivo que libera o exercício seguinte</li>
     <li>Um checklist de uma folha, para imprimir e levar para o atendimento</li>
   </ul>
-  <a class="btn" id="cta" href="#">Receber o guia no WhatsApp</a>
-  <div class="obs">Guia liberado. Chega em PDF, no seu WhatsApp.</div>
+  <a class="btn" id="abrir" href="antes-do-salto.pdf" target="_blank" rel="noopener">Abrir o guia agora</a>
+  <div class="obs">Guia liberado. Abre aqui mesmo, em PDF, e você salva se quiser.</div>
+
+  <div class="ou">ou</div>
+
+  <a class="zap" id="cta" href="#">Prefiro receber no WhatsApp</a>
+  <div class="zap-obs">Se quiser trocar ideia sobre um caso, é por aqui que eu respondo.</div>
 </div>
 <script>
   var canal = (new URLSearchParams(location.search).get('c') || '').toLowerCase();
@@ -49,6 +61,17 @@
   var texto = 'Quero o guia de aterrissagem ' + marca;
   document.getElementById('cta').href =
     'https://wa.me/5521974620109?text=' + encodeURIComponent(texto);
+
+  // manda os dois cliques pro GTM, separados por canal, pra dar pra comparar
+  // quantos abriram direto e quantos preferiram conversar
+  function medir(id, acao) {
+    document.getElementById(id).addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'guia_' + acao, canal: marca });
+    });
+  }
+  medir('abrir', 'abriu');
+  medir('cta', 'whatsapp');
 </script>
 </body>
 </html>
