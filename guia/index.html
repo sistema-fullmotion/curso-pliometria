@@ -34,75 +34,124 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Inter,-apple-system,Arial,sans-serif;background:#0d1b26;color:#fff;
-       line-height:1.6;padding:8vh 6vw;display:flex;justify-content:center}
-  .wrap{max-width:620px;width:100%}
+       line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:620px;margin:0 auto;padding:26px 22px 60px}
   /* a logo é escura sobre transparente: no fundo navy ela precisa virar branca */
-  .logo{height:44px;width:auto;margin-bottom:48px;filter:brightness(0) invert(1)}
-  h1{font-size:clamp(34px,7vw,54px);font-weight:900;letter-spacing:-1.5px;line-height:1.05}
-  .sub{color:#00d4e8;font-size:clamp(16px,3vw,19px);margin-top:20px;font-weight:600}
-  .quem{color:#8fa1b0;font-size:14px;margin-top:10px}
-  ul{list-style:none;margin:36px 0}
-  li{padding:11px 0 11px 28px;position:relative;color:#c4d2dc;font-size:16px;
-     border-bottom:1px solid #1c2c3a}
-  li::before{content:"";position:absolute;left:0;top:20px;width:9px;height:9px;
-             background:#00d4e8;border-radius:50%}
+  .logo{height:34px;width:auto;filter:brightness(0) invert(1)}
+  .eyebrow{color:#00d4e8;font-size:12px;font-weight:800;letter-spacing:2px;
+           text-transform:uppercase;margin-top:30px}
+
+  /* A pergunta do anuncio continua aqui. Antes a pagina abria com o titulo
+     "Antes do salto", que interrompe o pensamento de quem clicou pensando no
+     atleta com dor no joelho. */
+  h1{font-size:clamp(28px,6.2vw,40px);font-weight:900;letter-spacing:-1.2px;
+     line-height:1.12;margin-top:12px}
+  h1 span{color:#00d4e8}
+  .sub{color:#c4d2dc;font-size:16.5px;margin-top:16px}
+
   a.btn{display:block;background:#00d4e8;color:#08151e;text-align:center;
-        padding:20px;border-radius:10px;font-weight:800;font-size:18px;
-        text-decoration:none;margin-top:8px}
-  .obs{color:#7a8794;font-size:13px;margin-top:16px;text-align:center;line-height:1.6}
-  .obs a{color:#5d6d7b;text-decoration:underline;text-underline-offset:3px}
-  .ou{display:flex;align-items:center;gap:14px;margin:30px 0 22px;
-      color:#5d6d7b;font-size:13px}
-  .ou::before,.ou::after{content:"";flex:1;height:1px;background:#1c2c3a}
-  a.zap{display:block;text-align:center;padding:17px;border-radius:10px;
-        border:1px solid #2a3f52;color:#c4d2dc;font-weight:700;font-size:16px;
-        text-decoration:none}
-  .zap-obs{color:#5d6d7b;font-size:13px;margin-top:12px;text-align:center;line-height:1.5}
-  /* O video subiu para antes do botao. Fica estreito, 190px, de proposito: em 9:16
-     isso da 338px de altura, e a 250px daria 444, o que jogaria o botao longe
-     demais. Assim ele mostra o movimento e ainda deixa o clique perto. */
-  #prova{width:190px;border-radius:14px;margin:22px auto 0;display:block;
+        padding:21px 18px;border-radius:12px;font-weight:800;font-size:18.5px;
+        text-decoration:none;margin-top:26px;line-height:1.25}
+  /* os removedores de atrito ficam colados no botao, que e onde a duvida aparece */
+  .semAtrito{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+             margin-top:12px;color:#7a8794;font-size:12.5px}
+  .semAtrito b{color:#9fb0bc;font-weight:700}
+
+  h2{font-size:19px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .bloco{margin-top:42px;border-top:1px solid #1c2c3a;padding-top:26px}
+  .bloco p{color:#8fa1b0;font-size:14.5px}
+
+  #prova{width:200px;border-radius:14px;margin:18px auto 0;display:block;
          border:1px solid #1c2c3a;background:#08090B}
-  .legenda{color:#8fa1b0;font-size:13px;line-height:1.5;text-align:center;
-           margin:10px auto 18px;max-width:330px}
+  .legenda{color:#7a8794;font-size:12.5px;line-height:1.5;text-align:center;
+           margin:10px auto 0;max-width:340px}
+
+  ul{list-style:none;margin-top:14px}
+  li{padding:11px 0 11px 26px;position:relative;color:#c4d2dc;font-size:15px;
+     border-bottom:1px solid #1c2c3a}
+  li:last-child{border-bottom:0}
+  li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:8px;
+             background:#00d4e8;border-radius:50%}
+
+  /* Credibilidade. A pagina antiga nao dizia quem e a Fullmotion, e quem vem de
+     anuncio nao tem motivo nenhum para confiar. */
+  .creds{margin-top:16px;background:#0f2231;border:1px solid #1c2c3a;
+         border-radius:14px;padding:20px}
+  .creds .nome{font-size:16px;font-weight:800}
+  .creds .reg{color:#7a8794;font-size:13px;margin-top:2px}
+  .creds ul{margin-top:12px}
+  .creds li{font-size:14px;padding:7px 0 7px 22px;border-bottom:0;color:#9fb0bc}
+  .creds li::before{top:15px;width:6px;height:6px}
+
+  .rodape{margin-top:40px;border-top:1px solid #1c2c3a;padding-top:24px}
+  a.zap{display:block;text-align:center;padding:16px;border-radius:10px;
+        border:1px solid #2a3f52;color:#c4d2dc;font-weight:700;font-size:15.5px;
+        text-decoration:none;margin-top:14px}
+  .obs{color:#5d6d7b;font-size:12.5px;margin-top:14px;text-align:center;line-height:1.6}
+  .obs a{color:#7a8794;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX9QDQKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="wrap">
   <img class="logo" src="../img/logo.png" alt="Fullmotion">
-  <h1>Antes do salto</h1>
-  <div class="sub">Os 6 educativos de aterrissagem que vêm antes de qualquer pliometria</div>
-  <div class="quem">Para fisioterapeuta e preparador físico</div>
 
-  <!-- O video subiu para antes do botao. Na ordem anterior, com o botao acima da
-       dobra e a prova embaixo, 125 visualizacoes do anuncio geraram cerca de 3
-       aberturas. Para oferta liberada isso e baixo demais, entao a hipotese de que
-       "sem preco a pessoa so precisa poder clicar" nao se sustentou: ela precisa
-       primeiro entender o que e. -->
-  <video id="prova" src="../img/guia-progressao.mp4" poster="../img/guia-progressao.jpg"
-         muted autoplay loop playsinline preload="metadata"
-         aria-label="Três exercícios de aterrissagem executados em sequência"></video>
-  <div class="legenda">Queda do step, queda da caixa e uma perna só, os três
-  primeiros degraus, gravados na clínica.</div>
+  <div class="eyebrow">Para fisioterapeuta e preparador físico</div>
+  <h1>O joelho reclamou depois que o salto entrou no <span>treino</span>?</h1>
+  <div class="sub">Quase sempre é o mesmo motivo: a pliometria começou antes da fase
+  de aterrissagem. Estes são os 6 educativos que vêm antes.</div>
 
   <a class="btn" id="abrir" href="antes-do-salto.pdf" target="_blank" rel="noopener">Abrir o guia agora</a>
-  <div class="obs">Guia liberado. Abre aqui mesmo, em PDF, e você salva se quiser.<br>
-  <a id="a4" href="antes-do-salto-a4.pdf" target="_blank" rel="noopener">Vai imprimir o checklist? Baixe a versão A4.</a></div>
+  <div class="semAtrito">
+    <span><b>PDF de 11 páginas</b></span>
+    <span>abre no celular</span>
+    <span><b>sem cadastro</b></span>
+  </div>
 
-  <!-- a lista desceu para depois do botao: ela detalha, o video convence. Entre as
-       duas coisas na primeira tela, a prova rende mais que a promessa escrita. -->
-  <ul>
-    <li>Os 6 educativos na ordem, com execução e o que observar</li>
-    <li>O erro mais comum de cada um, e como ele aparece no atendimento</li>
-    <li>O critério objetivo que libera o exercício seguinte</li>
-    <li>Um checklist para imprimir e levar para o atendimento</li>
-  </ul>
+  <div class="bloco">
+    <h2>É disso que ele trata</h2>
+    <p>Queda do step, queda da caixa e uma perna só, os três primeiros degraus,
+    gravados na clínica.</p>
+    <video id="prova" src="../img/guia-progressao.mp4" poster="../img/guia-progressao.jpg"
+           muted autoplay loop playsinline preload="metadata"
+           aria-label="Três exercícios de aterrissagem executados em sequência"></video>
+    <div class="legenda">Nenhum deles pede salto para cima. Todos treinam a mesma
+    coisa: chegar no chão com controle e ficar.</div>
+  </div>
 
-  <div class="ou">ou</div>
+  <div class="bloco">
+    <h2>O que está dentro</h2>
+    <ul>
+      <li>Os 6 educativos na ordem, com execução e o que observar</li>
+      <li>O erro mais comum de cada um, e como ele aparece no atendimento</li>
+      <li>O critério objetivo que libera o exercício seguinte</li>
+      <li>Um checklist para imprimir e levar para o atendimento</li>
+    </ul>
+  </div>
 
-  <a class="zap" id="cta" href="#">Prefiro receber no WhatsApp</a>
-  <div class="zap-obs">Se quiser trocar ideia sobre um caso, é por aqui que eu respondo.</div>
+  <div class="bloco">
+    <h2>Quem escreveu</h2>
+    <p>O guia sai do workshop presencial de 20 de junho de 2026, no Recreio, onde a
+    equipe da Fullmotion passou o dia nesse conteúdo antes de ele virar material.</p>
+    <div class="creds">
+      <div class="nome">Fabrício Quintanilha</div>
+      <div class="reg">Fisioterapeuta · CREFITO-2 410684-F</div>
+      <ul>
+        <li>Fundador da Fullmotion RJ, com duas unidades no Rio</li>
+        <li>Fisioterapia do futsal do Vasco em 2023 e 2024</li>
+        <li>A Fullmotion é responsável hoje pela fisioterapia do futsal do Botafogo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bloco">
+    <a class="btn" id="abrir2" href="antes-do-salto.pdf" target="_blank" rel="noopener">Abrir o guia agora</a>
+    <div class="rodape" style="margin-top:26px">
+      <a class="zap" id="cta" href="#">Prefiro receber no WhatsApp</a>
+      <div class="obs">Se quiser trocar ideia sobre um caso, é por aqui que eu respondo.<br>
+      <a id="a4" href="antes-do-salto-a4.pdf" target="_blank" rel="noopener">Vai imprimir o checklist? Baixe a versão A4.</a></div>
+    </div>
+  </div>
 </div>
 <script>
   // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago,
@@ -114,22 +163,25 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   document.getElementById('cta').href =
     'https://wa.me/5521974620109?text=' + encodeURIComponent(texto);
 
-  // manda os dois cliques pro GTM, separados por canal, pra dar pra comparar
-  // quantos abriram direto e quantos preferiram conversar
-  function medir(id, acao) {
-    document.getElementById(id).addEventListener('click', function () {
+  // manda os cliques pro GTM e pro pixel. O parametro "posicao" separa o botao do
+  // topo do botao do fim, pra saber se alguem chega a rolar a pagina inteira.
+  function medir(id, acao, posicao) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', function () {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'guia_' + acao, canal: marca });
+      window.dataLayer.push({ event: 'guia_' + acao, canal: marca, posicao: posicao });
       // PageView sozinho nao serve pra otimizar nem pra remarketing: todo mundo que
       // carrega a pagina dispara. O que vale e quem abriu o guia e quem foi conversar.
       if (typeof fbq === 'function') {
         fbq('trackCustom', acao === 'abriu' ? 'GuiaAberto' : 'GuiaWhatsApp',
-            { canal: marca });
+            { canal: marca, posicao: posicao });
       }
     });
   }
-  medir('abrir', 'abriu');
-  medir('cta', 'whatsapp');
+  medir('abrir', 'abriu', 'topo');
+  medir('abrir2', 'abriu', 'fim');
+  medir('cta', 'whatsapp', 'fim');
 
   // o atributo autoplay nao dispara aqui: o video fica abaixo da dobra e o
   // navegador adia. Entao toca na mao quando ele entra na tela, e pausa quando
