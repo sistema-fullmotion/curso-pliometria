@@ -154,9 +154,9 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   </div>
 </div>
 <script>
-  // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago,
+  // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago, H = hub de cursos,
   // V = veio da pagina de vendas, D = link solto
-  var CANAIS = { e: '(E)', f: '(F)', a: '(A)', v: '(V)' };
+  var CANAIS = { e: '(E)', f: '(F)', a: '(A)', v: '(V)', h: '(H)' };
   var canal = (new URLSearchParams(location.search).get('c') || '').toLowerCase();
   var marca = CANAIS[canal] || '(D)';
   var texto = 'Quero o guia de aterrissagem ' + marca;
