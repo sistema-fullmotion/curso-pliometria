@@ -83,6 +83,37 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   .creds li{font-size:14px;padding:7px 0 7px 22px;border-bottom:0;color:#9fb0bc}
   .creds li::before{top:15px;width:6px;height:6px}
 
+  /* Captura DEPOIS do guia, nao antes. O PDF abre em outra aba e esta caixa
+     aparece nesta, entao ninguem paga pedagio pra ler: quem preenche e quem ja
+     tem o material na mao. Lista menor e muito mais qualificada. */
+  .captura{display:none;margin-top:42px;background:#0f2231;border:1px solid #1c4356;
+           border-radius:16px;padding:24px}
+  .captura.on{display:block}
+  .captura h2{color:#00d4e8}
+  .captura p{color:#9fb0bc;font-size:14.5px;margin-top:6px}
+  .captura label{display:block;margin-top:14px;font-size:13px;color:#9fb0bc;
+                 font-weight:700}
+  .captura input[type=text],.captura input[type=email]{width:100%;margin-top:6px;
+      padding:14px;border-radius:10px;border:1px solid #2a3f52;background:#08151e;
+      color:#fff;font-size:16px;font-family:inherit}
+  .captura input:focus{outline:2px solid #00d4e8;outline-offset:1px}
+  /* precisa ser mais especifico que ".captura label", senao o aceite sai em
+     negrito e parece titulo em vez de letra miuda */
+  .captura label.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;
+           font-size:12.5px;color:#8fa1b0;font-weight:400;line-height:1.5}
+  .consent input{margin-top:3px;width:17px;height:17px;flex:0 0 17px;accent-color:#00d4e8}
+  .captura button{width:100%;margin-top:18px;padding:17px;border:0;border-radius:11px;
+      background:#00d4e8;color:#08151e;font-weight:800;font-size:16.5px;
+      font-family:inherit;cursor:pointer}
+  .captura button[disabled]{opacity:.55;cursor:default}
+  .aviso{margin-top:12px;font-size:12px;color:#5d6d7b;line-height:1.55}
+  .aviso a{color:#7a8794}
+  .recado{margin-top:14px;font-size:14px;line-height:1.5;display:none}
+  .recado.erro{display:block;color:#ffb4a2}
+  .recado.ok{display:block;color:#00d4e8;font-weight:700}
+  /* honeypot: campo invisivel pra humano, irresistivel pra robo de formulario */
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
   .rodape{margin-top:40px;border-top:1px solid #1c2c3a;padding-top:24px}
   a.zap{display:block;text-align:center;padding:16px;border-radius:10px;
         border:1px solid #2a3f52;color:#c4d2dc;font-weight:700;font-size:15.5px;
@@ -144,6 +175,36 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
     </div>
   </div>
 
+  <form class="captura" id="captura" novalidate>
+    <h2>Guia aberto na outra aba</h2>
+    <p>Se ele te serviu, deixa seu contato que eu te aviso quando sair material novo.
+    É o mesmo tipo de coisa: exercício, critério, caso real.</p>
+
+    <label for="nome">Seu nome</label>
+    <input type="text" id="nome" name="nome" autocomplete="name" required>
+
+    <label for="email">Seu e-mail</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+
+    <div class="hp" aria-hidden="true">
+      <label for="empresa">Empresa</label>
+      <input type="text" id="empresa" name="empresa" tabindex="-1" autocomplete="off">
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="aceite" required>
+      <span>Aceito receber por e-mail materiais e avisos de curso da Fullmotion RJ.
+      Sei que posso pedir para sair a qualquer momento.</span>
+    </label>
+
+    <button type="submit" id="enviar">Quero receber os próximos</button>
+    <div class="recado" id="recado" role="status"></div>
+
+    <div class="aviso">Seu nome e e-mail são usados só para isso. Não vão para
+    lista de terceiros e ficam separados dos dados de paciente da clínica. Para sair
+    ou apagar seu cadastro, responda qualquer e-mail nosso ou chame no WhatsApp.</div>
+  </form>
+
   <div class="bloco">
     <a class="btn" id="abrir2" href="antes-do-salto.pdf" target="_blank" rel="noopener">Abrir o guia agora</a>
     <div class="rodape" style="margin-top:26px">
@@ -182,6 +243,78 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   medir('abrir', 'abriu', 'topo');
   medir('abrir2', 'abriu', 'fim');
   medir('cta', 'whatsapp', 'fim');
+
+  // ---- captura de contato, depois do guia ----------------------------------
+  // TROCAR PELO ENDERECO REAL DO WEBHOOK DO N8N. Enquanto estiver assim, o
+  // formulario nem aparece, entao a pagina nao mostra caixa quebrada pra ninguem.
+  var WEBHOOK = 'https://COLOQUE-O-N8N-AQUI/webhook/guia-lead';
+  var ligado = WEBHOOK.indexOf('COLOQUE-O-N8N-AQUI') === -1;
+
+  var form = document.getElementById('captura');
+  var recado = document.getElementById('recado');
+  var botao = document.getElementById('enviar');
+
+  function revelar() {
+    if (!ligado || form.classList.contains('on')) return;
+    form.classList.add('on');
+    // espera o clique abrir a outra aba antes de rolar, senao o scroll acontece
+    // numa aba que perdeu o foco e o usuario volta sem entender onde parou
+    setTimeout(function () {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 700);
+  }
+  ['abrir', 'abrir2', 'a4'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', revelar);
+  });
+
+  function dizer(texto, classe) {
+    recado.textContent = texto;
+    recado.className = 'recado ' + classe;
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var nome = document.getElementById('nome').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var aceite = document.getElementById('aceite').checked;
+
+    // robo preencheu o campo escondido: finge que deu certo e nao manda nada
+    if (document.getElementById('empresa').value) {
+      dizer('Pronto, anotado.', 'ok');
+      return;
+    }
+    if (nome.length < 2) { return dizer('Escreve seu nome, por favor.', 'erro'); }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) {
+      return dizer('Confere o e-mail, parece que faltou alguma coisa.', 'erro');
+    }
+    if (!aceite) { return dizer('Marque a caixa do aceite para eu poder te escrever.', 'erro'); }
+
+    botao.disabled = true;
+    dizer('Enviando...', 'ok');
+
+    fetch(WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nome: nome, email: email, canal: marca,
+        origem: 'guia-aterrissagem', consentimento: true,
+        quando: new Date().toISOString()
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      form.innerHTML = '<h2>Anotado, ' + nome.split(' ')[0] + '</h2>' +
+        '<p>Quando sair material novo você recebe. Enquanto isso, o guia já está ' +
+        'aberto na outra aba.</p>';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'guia_lead', canal: marca });
+      if (typeof fbq === 'function') { fbq('trackCustom', 'GuiaLead', { canal: marca }); }
+    }).catch(function () {
+      botao.disabled = false;
+      dizer('Não consegui salvar agora. Tenta de novo, ou me chama no WhatsApp ' +
+            'ali embaixo que eu anoto na mão.', 'erro');
+    });
+  });
 
   // o atributo autoplay nao dispara aqui: o video fica abaixo da dobra e o
   // navegador adia. Entao toca na mao quando ele entra na tela, e pausa quando
