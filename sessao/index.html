@@ -253,7 +253,11 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
   // Dados do produto num lugar so, pra ViewContent, InitiateCheckout e Purchase
   // falarem a mesma lingua. Sem content_ids igual dos dois lados, a Meta nao
   // liga quem viu a quem comprou.
-  var PRODUTO = {
+  // window.FM_PRODUTO: o rastreio.js le daqui para mandar valor junto do
+  // InitiateCheckout. Quem dispara o InitiateCheckout e ele, no clique que sai
+  // para a Kiwify, e nao esta pagina: disparar nos dois lugares contava a mesma
+  // intencao duas vezes e estragava o funil.
+  var PRODUTO = window.FM_PRODUTO = {
     content_ids: ['sessao-fullmotion'],
     content_name: 'A Sessão Fullmotion',
     content_type: 'product',
@@ -277,9 +281,8 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'sessao_checkout', botao: id });
       if (typeof fbq === 'function') {
-        // o padrao InitiateCheckout e o que a Meta entende e otimiza. O custom
-        // fica junto so para separar qual dos dois botoes foi clicado.
-        fbq('track', 'InitiateCheckout', PRODUTO);
+        // so o custom aqui: o InitiateCheckout padrao quem manda e o
+        // rastreio.js, com o valor que veio de window.FM_PRODUTO
         fbq('trackCustom', 'SessaoCheckout', { botao: id });
       }
     });

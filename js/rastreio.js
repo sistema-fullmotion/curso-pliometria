@@ -80,10 +80,18 @@
         a.dataset.fmCheckout = '1';
         a.addEventListener('click', function () {
           if (typeof fbq === 'function') {
-            fbq('track', 'InitiateCheckout', {
+            // a pagina declara window.FM_PRODUTO com preco e id do produto.
+            // Sem valor, a Meta conta a intencao mas nao sabe quanto ela vale,
+            // e e o valor que faz ela procurar comprador em vez de curioso.
+            var dados = {
               content_name: document.title,
               source: origem.utm_campaign || 'direto'
-            });
+            };
+            var p = window.FM_PRODUTO;
+            if (p) {
+              for (var k in p) { if (p.hasOwnProperty(k)) dados[k] = p[k]; }
+            }
+            fbq('track', 'InitiateCheckout', dados);
           }
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({

@@ -668,6 +668,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="sp"><b>R$ 347</b><span>pagamento único · acesso vitalício</span></div>
   <a href="https://pay.kiwify.com.br/V4n4jff">Quero fazer</a>
 </div>
+<script>
+  // preco e id do produto para o rastreio.js mandar junto do InitiateCheckout
+  window.FM_PRODUTO = {
+    content_ids: ['formacao-pliometria'],
+    content_name: 'Formação em Pliometria e Potência',
+    content_type: 'product',
+    value: 347.00,
+    currency: 'BRL'
+  };
+  if (typeof fbq === 'function') { fbq('track', 'ViewContent', window.FM_PRODUTO); }
+</script>
 <script src="/js/rastreio.js" defer></script>
 </body>
 </html>
