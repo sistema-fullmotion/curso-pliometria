@@ -250,6 +250,25 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
 
 </div>
 <script>
+  // Dados do produto num lugar so, pra ViewContent, InitiateCheckout e Purchase
+  // falarem a mesma lingua. Sem content_ids igual dos dois lados, a Meta nao
+  // liga quem viu a quem comprou.
+  var PRODUTO = {
+    content_ids: ['sessao-fullmotion'],
+    content_name: 'A Sessão Fullmotion',
+    content_type: 'product',
+    value: 27.00,
+    currency: 'BRL'
+  };
+
+  // ViewContent na abertura. Evento PADRAO, nao personalizado: a Meta so usa
+  // evento padrao com valor para calibrar quem tem perfil de comprador, e e ele
+  // que alimenta publico semelhante depois. PageView sozinho nao serve, porque
+  // todo mundo que carrega a pagina dispara.
+  if (typeof fbq === 'function') { fbq('track', 'ViewContent', PRODUTO); }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'sessao_viewcontent', valor: PRODUTO.value });
+
   // um evento por botao, pra saber qual dos dois leva ao checkout
   ['comprar','comprar2'].forEach(function (id) {
     var el = document.getElementById(id);
@@ -258,6 +277,9 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'sessao_checkout', botao: id });
       if (typeof fbq === 'function') {
+        // o padrao InitiateCheckout e o que a Meta entende e otimiza. O custom
+        // fica junto so para separar qual dos dois botoes foi clicado.
+        fbq('track', 'InitiateCheckout', PRODUTO);
         fbq('trackCustom', 'SessaoCheckout', { botao: id });
       }
     });
