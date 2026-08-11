@@ -205,30 +205,6 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
     ou apagar seu cadastro, responda qualquer e-mail nosso ou chame no WhatsApp.</div>
   </form>
 
-  <!-- o proximo passo: o guia e a porta, os cursos sao o caminho. Links
-       internos, entao o rastreio.js carrega a UTM do anuncio ate o checkout. -->
-  <div class="bloco">
-    <h2>Quando o critério liberar, o caminho segue aqui</h2>
-    <p>O guia cobre os educativos que vêm antes do salto. O que vem depois é
-    progressão medida, e ela já está gravada:</p>
-    <a class="prox" href="/sessao/">
-      <strong>A Sessão Fullmotion · R$ 27</strong>
-      <span>Uma sessão real do início ao fim: sete exercícios aplicados num
-      paciente, explicados por quem conduziu. Acesso vitalício.</span>
-    </a>
-    <a class="prox" href="/pliometriaepotencia/">
-      <strong>Formação em Pliometria e Potência · R$ 347</strong>
-      <span>Da fisiologia à progressão, com 43 demonstrações em vídeo e o
-      critério que libera cada fase.</span>
-    </a>
-  </div>
-  <style>
-    .prox{display:block;border:1px solid rgba(0,212,232,.35);border-radius:12px;
-          padding:15px 17px;margin-top:12px;text-decoration:none}
-    .prox strong{display:block;color:#00d4e8;font-size:16.5px;margin-bottom:4px}
-    .prox span{color:inherit;opacity:.82;font-size:14.5px;line-height:1.5}
-  </style>
-
   <div class="bloco">
     <a class="btn" id="abrir2" href="antes-do-salto.pdf" target="_blank" rel="noopener">Abrir o guia agora</a>
     <div class="rodape" style="margin-top:26px">
@@ -237,6 +213,38 @@ src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></n
       <a id="a4" href="antes-do-salto-a4.pdf" target="_blank" rel="noopener">Vai imprimir o checklist? Baixe a versão A4.</a></div>
     </div>
   </div>
+
+  <!-- o proximo passo vem DEPOIS da entrega do guia: primeiro a pagina cumpre a
+       promessa do anuncio, depois oferece o caminho. Links internos, entao o
+       rastreio.js carrega a UTM do anuncio ate o checkout. -->
+  <div class="bloco">
+    <h2>Quando o critério liberar, o caminho segue aqui</h2>
+    <p style="color:#c4d2dc">O guia cobre os educativos que vêm antes do salto.
+    O que vem depois é progressão medida, e ela já está gravada:</p>
+    <a class="prox" href="/sessao/">
+      <strong>A Sessão Fullmotion <em>R$ 27</em></strong>
+      <span>Uma sessão real do início ao fim: sete exercícios aplicados num
+      paciente, explicados por quem conduziu. Acesso vitalício.</span>
+      <em class="ir">conhecer ›</em>
+    </a>
+    <a class="prox" href="/pliometriaepotencia/">
+      <strong>Formação em Pliometria e Potência <em>R$ 347</em></strong>
+      <span>Da fisiologia à progressão, com 43 demonstrações em vídeo e o
+      critério que libera cada fase.</span>
+      <em class="ir">conhecer ›</em>
+    </a>
+  </div>
+  <style>
+    .prox{display:block;background:#0f2231;border:1px solid #1c2c3a;
+          border-radius:14px;padding:19px 20px;margin-top:12px;text-decoration:none}
+    .prox strong{display:flex;justify-content:space-between;align-items:baseline;
+          gap:10px;color:#fff;font-size:16px;margin-bottom:5px}
+    .prox strong em{font-style:normal;color:#00d4e8;font-weight:800;font-size:15px;
+          white-space:nowrap}
+    .prox span{display:block;color:#8fa3b3;font-size:14px;line-height:1.55}
+    .prox .ir{display:inline-block;font-style:normal;color:#00d4e8;font-weight:700;
+          font-size:13px;margin-top:9px}
+  </style>
 </div>
 <script>
   // E = Edu, F = perfil pessoal do Fabricio, A = anuncio pago, H = hub de cursos,
