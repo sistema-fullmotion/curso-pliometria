@@ -1,277 +1,382 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imersão Fullmotion - 2 Dias de Aprendizado Prático</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #222;
-      line-height: 1.6;
-      background: #fafafa;
-    }
-    header {
-      background: linear-gradient(135deg, #00D4E8 0%, #0096c7 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      font-weight: 900;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    section {
-      background: white;
-      margin-bottom: 30px;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    h2 {
-      color: #00D4E8;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #00D4E8;
-      padding-bottom: 10px;
-    }
-    ul, ol {
-      margin-left: 20px;
-      margin-top: 15px;
-    }
-    li {
-      margin-bottom: 12px;
-      text-align: justify;
-    }
-    .highlight {
-      background: #f0f9ff;
-      padding: 20px;
-      border-left: 4px solid #00D4E8;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-    .price-section {
-      background: linear-gradient(135deg, #00D4E8 0%, #0096c7 100%);
-      color: white;
-      padding: 30px;
-      text-align: center;
-      border-radius: 8px;
-      margin: 30px 0;
-    }
-    .price {
-      font-size: 3rem;
-      font-weight: 900;
-      margin: 10px 0;
-    }
-    .price small {
-      font-size: 1rem;
-      display: block;
-      opacity: 0.9;
-    }
-    .cta-button {
-      display: inline-block;
-      background: #00D4E8;
-      color: white;
-      padding: 15px 40px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 20px;
-    }
-    .cta-button:hover {
-      background: #0096c7;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: 20px 0;
-    }
-    .card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 6px;
-      border-left: 3px solid #00D4E8;
-    }
-    .card h3 {
-      color: #00D4E8;
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.8rem; }
-      .grid { grid-template-columns: 1fr; }
-      .price { font-size: 2rem; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="facebook-domain-verification" content="g9d19olnn4mc9grsifw7rcz2e625su" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WX9QDQKC');</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1046223337782977');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1046223337782977&ev=PageView&noscript=1"></noscript>
+<title>Imersão Fullmotion · dois dias dentro da clínica</title>
+<meta name="description" content="Dois dias acompanhando os atendimentos da Fullmotion. Você aprende na prática a nossa avaliação e os exercícios específicos. Individual, com data combinada.">
+<meta name="theme-color" content="#07080A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fullmotion RJ">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Imersão Fullmotion · dois dias dentro da clínica">
+<meta property="og:description" content="Dois dias acompanhando os atendimentos da Fullmotion. Avaliação e exercícios específicos, aprendidos na prática. Individual.">
+<meta property="og:url" content="https://curso.fullmotionrj.com/imersao/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    color-scheme: dark;
+    --bg:#07080A; --surface:#111417; --surface2:#171B1F; --line:rgba(255,255,255,.08);
+    --teal:#49C1C0; --cyan:#5BFCFF; --ink:#EEF2F3; --muted:#8B9599; --muted2:#606A6E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;
+       font-family:Inter,-apple-system,"Segoe UI",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+
+  .barra{position:fixed;top:0;left:0;height:3px;width:0;z-index:20;
+         background:linear-gradient(90deg,var(--teal),var(--cyan));
+         box-shadow:0 0 14px rgba(91,252,255,.7)}
+
+  .fundo{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+  .fundo .grade{position:absolute;inset:-2px;
+    background-image:linear-gradient(rgba(91,252,255,.055) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(91,252,255,.055) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 85% 60% at 50% 0%,#000 25%,transparent 78%);
+            mask-image:radial-gradient(ellipse 85% 60% at 50% 0%,#000 25%,transparent 78%)}
+  .fundo .luz{position:absolute;width:520px;height:520px;border-radius:50%;
+    left:var(--mx,50%);top:var(--my,18%);transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(73,193,192,.20),transparent 62%);
+    transition:left .5s ease-out,top .5s ease-out}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  .logo{height:38px;width:auto;margin:34px 0 0;filter:brightness(0) invert(1)}
+  .eyebrow{color:var(--teal);font-size:12.5px;font-weight:800;letter-spacing:2.5px;
+           text-transform:uppercase}
+  .eyebrow i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:9px;
+             background:var(--cyan);box-shadow:0 0 0 0 rgba(91,252,255,.6);
+             animation:pulso 2s infinite}
+  @keyframes pulso{70%{box-shadow:0 0 0 10px rgba(91,252,255,0)}100%{box-shadow:0 0 0 0 rgba(91,252,255,0)}}
+  h1{font-size:clamp(36px,7.4vw,60px);font-weight:900;letter-spacing:-2px;
+     line-height:1.03;margin-top:16px}
+  h1 span{background:linear-gradient(100deg,var(--teal),var(--cyan) 45%,#fff 60%,var(--cyan) 75%,var(--teal));
+          background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
+          color:transparent;animation:brilho 6s linear infinite}
+  @keyframes brilho{to{background-position:-220% 0}}
+  h2{font-size:clamp(22px,4.2vw,30px);font-weight:800;letter-spacing:-.6px;line-height:1.15}
+  .rule{width:56px;height:4px;background:var(--teal);border-radius:2px;margin:14px 0 20px}
+  p{margin-top:14px;max-width:62ch;color:var(--muted)}
+  p.big{color:var(--ink);font-size:18px}
+  b{color:var(--ink);font-weight:700}
+
+  .nums{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px}
+  .nums .n{font-size:34px;font-weight:900;color:var(--cyan);line-height:1;
+           font-variant-numeric:tabular-nums}
+  .nums .l{font-size:12.5px;color:var(--muted2);margin-top:6px;max-width:140px}
+
+  .cta{position:relative;display:block;text-align:center;overflow:hidden;
+       background:linear-gradient(135deg,var(--teal),var(--cyan));
+       color:#04212a;font-weight:800;font-size:17px;padding:18px 26px;border-radius:12px;
+       text-decoration:none;margin-top:26px;
+       transition:transform .2s ease,box-shadow .2s ease}
+  .cta small{display:block;font-size:12.5px;font-weight:700;opacity:.8;margin-top:3px}
+  .cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+              background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+              transform:skewX(-20deg);animation:varre 3.4s ease-in-out infinite}
+  @keyframes varre{0%,55%{left:-60%}100%{left:130%}}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(91,252,255,.28)}
+  .hint{font-size:12.5px;color:var(--muted2);margin-top:11px;text-align:center}
+
+  .abas{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+  .abas button{font:inherit;font-size:14px;font-weight:800;color:var(--muted);cursor:pointer;
+               background:var(--surface);border:1px solid var(--line);border-radius:999px;
+               padding:10px 18px;transition:all .2s ease}
+  .abas button:hover{color:var(--ink);border-color:rgba(91,252,255,.3)}
+  .abas button[aria-selected="true"]{color:#04212a;border-color:transparent;
+               background:linear-gradient(135deg,var(--teal),var(--cyan))}
+  .painel{display:none;margin-top:18px}
+  .painel.on{display:block;animation:entra .45s ease both}
+  @keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+  ol.dia{list-style:none;counter-reset:d}
+  ol.dia li{counter-increment:d;display:flex;gap:15px;padding:15px 0;
+            border-bottom:1px solid var(--line)}
+  ol.dia li::before{content:counter(d);flex:0 0 28px;height:28px;line-height:28px;
+                    text-align:center;border-radius:50%;background:var(--surface2);
+                    color:var(--teal);font-size:12.5px;font-weight:800}
+  ol.dia b{display:block;font-size:15.5px}
+  ol.dia span{font-size:14px;color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin-top:24px}
+  .card{position:relative;background:var(--surface);border:1px solid var(--line);
+        border-radius:16px;padding:22px;overflow:hidden;
+        transition:transform .25s ease,border-color .25s ease}
+  .card::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s ease;
+        background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),rgba(91,252,255,.16),transparent 65%)}
+  .card:hover{transform:translateY(-4px);border-color:rgba(91,252,255,.35)}
+  .card:hover::before{opacity:1}
+  .card > *{position:relative}
+  .card .rot{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--teal)}
+  .card b{display:block;font-size:16px;margin-top:8px}
+  .card p{font-size:14px;margin-top:8px}
+
+  .plano{position:relative;border-radius:18px;padding:1px;margin-top:24px;
+         background:linear-gradient(135deg,rgba(91,252,255,.65),rgba(73,193,192,.08) 45%,rgba(91,252,255,.4));
+         background-size:200% 200%;animation:borda 7s ease infinite}
+  @keyframes borda{50%{background-position:100% 100%}}
+  .plano .dentro{background:linear-gradient(180deg,#0e1a21,#111417);border-radius:17px;padding:28px}
+  .plano .rot{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--teal)}
+  .plano .preco{font-size:52px;font-weight:900;letter-spacing:-2px;margin-top:8px;line-height:1.05}
+  .plano .preco small{font-size:15px;font-weight:800;color:var(--muted);display:block;letter-spacing:0;margin-top:6px}
+
+  .incl{list-style:none;margin-top:18px}
+  .incl li{font-size:15px;color:var(--muted);padding:9px 0 9px 26px;position:relative}
+  .incl li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;
+                   border-radius:50%;background:var(--teal)}
+
+  .aviso{background:var(--surface);border-left:3px solid var(--teal);border-radius:12px;
+         padding:20px;margin-top:20px}
+  .aviso p{margin-top:0;color:var(--ink);font-size:15px}
+  .aviso p + p{margin-top:10px}
+
+  .anim .rev{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .anim .rev.ok{opacity:1;transform:none}
+
+  .fixo{position:fixed;left:0;right:0;bottom:0;z-index:15;padding:10px 16px 14px;
+        background:linear-gradient(180deg,transparent,rgba(7,8,10,.96) 35%);
+        transform:translateY(110%);transition:transform .35s ease}
+  .fixo.on{transform:none}
+  .fixo .cta{max-width:760px;margin:0 auto;padding:14px 20px;font-size:15.5px}
+
+  footer{padding:36px 0 110px;color:var(--muted2);font-size:13px;line-height:1.7}
+  footer a{color:var(--teal)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Imersão Fullmotion</h1>
-    <p>2 dias acompanhando avaliações e sessões reais</p>
-  </header>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX9QDQKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="barra" id="barra"></div>
+<div class="fundo"><div class="grade"></div><div class="luz" id="luz"></div></div>
 
-  <div class="container">
-    <section>
-      <h2>O que é a Imersão?</h2>
-      <p>A <strong>Imersão Fullmotion</strong> é um programa de 2 dias consecutivos onde você acompanha atendimentos reais da clínica — avaliações completas, prescrição de exercícios, aplicação de técnicas e recovery — e aprende na prática como funciona nosso método.</p>
-      <div class="highlight">
-        <strong>Não é um curso teórico.</strong> É observação + participação guiada de como trabalhamos aqui na Fullmotion.
-      </div>
-    </section>
+<div class="wrap">
+  <img class="logo" src="../img/logo.png" alt="Fullmotion">
 
-    <section>
-      <h2>Para quem é?</h2>
-      <p>Aberta para qualquer um que queira aprender:</p>
-      <ul>
-        <li>Paciente interessado em entender sua avaliação e rotina de tratamento</li>
-        <li>Profissional em formação (fisioterapeuta, educador físico, preparador físico)</li>
-        <li>Estagiário buscando experiência prática</li>
-        <li>Colega de clínica explorando novas técnicas</li>
-        <li>Qualquer um curioso sobre o método</li>
-      </ul>
-    </section>
+  <section>
+    <div class="eyebrow"><i></i>Individual · data combinada com você</div>
+    <h1>Imersão<br><span>Fullmotion</span></h1>
+    <p class="big">Dois dias dentro da clínica, acompanhando os nossos
+    atendimentos. Você aprende na prática a nossa avaliação e os exercícios
+    específicos, vendo paciente de verdade ser atendido do começo ao fim.</p>
+    <div class="nums">
+      <div><div class="n" data-n="2">2</div><div class="l">dias dentro da clínica</div></div>
+      <div><div class="n" data-n="1">1</div><div class="l">pessoa por vez, a imersão é individual</div></div>
+      <div><div class="n" data-n="0">0</div><div class="l">slides e sala de aula</div></div>
+    </div>
+    <a class="cta wa" href="#" data-onde="topo">Quero fazer a imersão<small>individual, com data combinada</small></a>
+  </section>
 
-    <section>
-      <h2>Cronograma dos 2 Dias</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Dia 1</h3>
-          <p><strong>Início:</strong> 7h30</p>
-          <p><strong>Você vai ver:</strong></p>
-          <ul style="margin-left: 10px; font-size: 0.95rem;">
-            <li>3 a 4 avaliações completas</li>
-            <li>Testes e observações</li>
-            <li>Prescrição de exercícios</li>
-            <li>1h de intervalo</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Dia 2</h3>
-          <p><strong>Horário:</strong> 7h30</p>
-          <p><strong>Você vai ver:</strong></p>
-          <ul style="margin-left: 10px; font-size: 0.95rem;">
-            <li>3 a 4 sessões de tratamento</li>
-            <li>Técnicas de movimento</li>
-            <li>Recuperação ativa</li>
-            <li>Encerramento com debrief</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <section class="rev">
+    <div class="eyebrow">Por que assim</div>
+    <h2>Curso mostra a técnica.<br>A clínica mostra a decisão.</h2>
+    <div class="rule"></div>
+    <p>Em vídeo e em sala de aula o paciente é sempre perfeito. Na clínica ele
+    chega com dor, com pressa e com uma história que não cabe no protocolo.</p>
+    <p>A imersão é ficar do nosso lado enquanto isso acontece: <b>ver o que a
+    gente olha, o que pergunta e por que escolhe cada exercício</b> para aquela
+    pessoa, naquele dia.</p>
+  </section>
 
-    <section>
-      <h2>O que você vai aprender</h2>
-      <ol>
-        <li><strong>Avaliação Fullmotion completa:</strong> o ritual de 80 minutos e o que cada teste revela</li>
-        <li><strong>Leitura de movimento:</strong> como identificar compensações e corrigir antes de exercício</li>
-        <li><strong>Prescrição em tempo real:</strong> como montar o plano da sessão durante o atendimento</li>
-        <li><strong>Recovery:</strong> botas de compressão, uso da poltrona e sequência de liberação</li>
-        <li><strong>Gestão da sessão:</strong> comunicação com paciente, prazos e renovação de plano</li>
+  <section class="rev">
+    <div class="eyebrow">O que você acompanha</div>
+    <h2>Toque para ver cada parte</h2>
+    <div class="rule"></div>
+    <div class="abas" role="tablist">
+      <button role="tab" aria-selected="true" data-p="p1">A avaliação</button>
+      <button role="tab" aria-selected="false" data-p="p2">Os exercícios</button>
+      <button role="tab" aria-selected="false" data-p="p3">O atendimento</button>
+    </div>
+
+    <div class="painel on" id="p1">
+      <ol class="dia">
+        <li><div><b>A conversa do começo</b><span>As perguntas que mudam a conduta, e o que a gente escuta nas respostas</span></div></li>
+        <li><div><b>A leitura do movimento</b><span>O que olhar, em que ordem, e onde o corpo está compensando</span></div></li>
+        <li><div><b>Os testes</b><span>O que cada um responde, e o que fazer com o resultado</span></div></li>
+        <li><div><b>A decisão</b><span>Como o que foi visto vira o plano daquela pessoa</span></div></li>
       </ol>
-    </section>
-
-    <section>
-      <h2>Detalhes Práticos</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Capacidade</h3>
-          <p>Máximo 2 alunos por semana (para não atrapalhar atendimento)</p>
-        </div>
-        <div class="card">
-          <h3>Local</h3>
-          <p><strong>Valqueire</strong> (Recreio disponível com 7 dias de aviso)</p>
-        </div>
-        <div class="card">
-          <h3>Documentação</h3>
-          <p>TCLE de observação — assinado no dia 1</p>
-        </div>
-        <div class="card">
-          <h3>Material</h3>
-          <p>PDF de preparação entregue após confirmação</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="price-section">
-      <h2 style="color: white; border-color: rgba(255,255,255,0.3);">Investimento</h2>
-      <div class="price">R$ 990 <small>PIX — pagamento no dia da confirmação</small></div>
-      <p style="margin-top: 15px; font-size: 1.1rem;">Inclui material de preparação + certificado de participação</p>
-    </section>
-
-    <section>
-      <h2>Próximos Passos</h2>
-      <ol>
-        <li>Clique no botão abaixo</li>
-        <li>Confirme suas datas preferidas (seg-sex)</li>
-        <li>Receba o PDF de preparação</li>
-        <li>Apareça no dia 1 às 7h30 — trazendo energia pra aprender</li>
+    </div>
+    <div class="painel" id="p2">
+      <ol class="dia">
+        <li><div><b>A escolha</b><span>Por que este exercício, para este paciente, neste momento</span></div></li>
+        <li><div><b>A execução</b><span>O detalhe que faz o exercício funcionar, visto de perto</span></div></li>
+        <li><div><b>A correção</b><span>O que a gente ajusta na hora, e como fala isso com o paciente</span></div></li>
+        <li><div><b>A progressão</b><span>O que precisa acontecer para o exercício subir de nível</span></div></li>
       </ol>
-      <div style="text-align: center;">
-        <a href="https://wa.me/5521971230701?text=Olá! Tenho interesse na Imersão Fullmotion. Gostaria de saber datas disponíveis." class="cta-button">Agendar Imersão via WhatsApp</a>
-      </div>
-      <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">Você será atendido pela equipe para confirmar data e horário</p>
-    </section>
+    </div>
+    <div class="painel" id="p3">
+      <ol class="dia">
+        <li><div><b>A sessão inteira</b><span>Do momento em que o paciente entra até a hora em que sai</span></div></li>
+        <li><div><b>Casos diferentes</b><span>Os pacientes que estiverem na agenda nos seus dois dias</span></div></li>
+        <li><div><b>As suas perguntas</b><span>Entre um atendimento e outro, com quem acabou de atender</span></div></li>
+      </ol>
+    </div>
+  </section>
 
-    <section>
-      <h2>Dúvidas Frequentes</h2>
-      <ul style="list-style: none;">
-        <li style="margin-bottom: 15px;">
-          <strong>Preciso de experiência em fisioterapia?</strong><br>
-          Não. A imersão é para qualquer pessoa interessada em aprender. Nossas fichas e técnicas são ensinadas durante a observação.
-        </li>
-        <li style="margin-bottom: 15px;">
-          <strong>Posso fotografar ou filmar?</strong><br>
-          Não (a menos que o paciente autorize explicitamente). O TCLE protege a privacidade de quem está sendo atendido.
-        </li>
-        <li style="margin-bottom: 15px;">
-          <strong>E se virar paciente depois?</strong><br>
-          A avaliação é cobrada normal (não abate a imersão). Mas você terá muito mais clareza sobre seus próximos passos no tratamento.
-        </li>
-        <li style="margin-bottom: 15px;">
-          <strong>Qual é a diferença do curso de Pliometria?</strong><br>
-          O curso é conteúdo gravado + material de estudo. A imersão é observação prática + debrief ao vivo.
-        </li>
+  <section class="rev">
+    <div class="eyebrow">Para quem</div>
+    <h2>Para quem quer aprender vendo</h2>
+    <div class="rule"></div>
+    <div class="cards">
+      <div class="card"><div class="rot">Estudante</div><b>Ainda na faculdade</b><p>Para ver a rotina de uma clínica antes de escolher o seu caminho.</p></div>
+      <div class="card"><div class="rot">Profissional</div><b>Já atende</b><p>Para comparar o seu jeito de avaliar e de prescrever com o nosso.</p></div>
+      <div class="card"><div class="rot">Movimento</div><b>Treino e Pilates</b><p>Para entender como a clínica pensa o exercício de quem tem dor.</p></div>
+    </div>
+  </section>
+
+  <section class="rev" id="valor">
+    <div class="eyebrow">Investimento</div>
+    <h2>Um formato só</h2>
+    <div class="rule"></div>
+    <div class="plano"><div class="dentro">
+      <div class="rot">Imersão individual</div>
+      <div class="preco">R$ 990<small>os dois dias · uma pessoa por vez</small></div>
+      <ul class="incl">
+        <li>Dois dias acompanhando os atendimentos da clínica</li>
+        <li>A nossa avaliação, vista do começo ao fim</li>
+        <li>Os exercícios específicos, na prática</li>
+        <li>Data combinada com você</li>
       </ul>
-    </section>
-  </div>
+      <a class="cta wa" href="#" data-onde="valor">Quero fazer a imersão<small>fale com a gente no WhatsApp</small></a>
+    </div></div>
+  </section>
+
+  <section class="rev">
+    <div class="eyebrow">Antes de marcar</div>
+    <h2>Duas coisas ditas com clareza</h2>
+    <div class="rule"></div>
+    <div class="aviso">
+      <p><b>Você vai ver dado clínico de pessoas reais.</b> Por isso quem faz a
+      imersão assina termo de sigilo antes de entrar na sala, e cada paciente
+      autoriza a presença de quem observa, podendo recusar ou mudar de ideia a
+      qualquer momento sem nenhuma consequência no tratamento dele.</p>
+      <p><b>Nada é filmado com paciente presente.</b> Nem por você, nem por nós,
+      a menos que exista autorização de imagem específica dele.</p>
+    </div>
+  </section>
+
+  <section class="rev">
+    <div class="eyebrow">Quem recebe você</div>
+    <h2>Fabrício Quintanilha e equipe</h2>
+    <div class="rule"></div>
+    <p>Fisioterapeuta, CREFITO-2 410684-F. Fundador da Fullmotion RJ, com duas
+    unidades no Rio. Fisioterapia do futsal do Vasco em 2023 e 2024, e a
+    Fullmotion é hoje responsável pela fisioterapia do futsal do Botafogo.</p>
+    <a class="cta wa" href="#" data-onde="fim">Quero fazer a imersão<small>individual, com data combinada</small></a>
+    <div class="hint">O botão abre uma conversa no WhatsApp da Fullmotion.</div>
+  </section>
 
   <footer>
-    <p><strong>Fullmotion Reabilitação</strong> | Rio de Janeiro</p>
-    <p style="margin-top: 10px; opacity: 0.8;">Desenvolvido com base em aprendizado real de avaliações e tratamentos de verdade.</p>
+    Fullmotion RJ · Vila Valqueire e Recreio dos Bandeirantes<br>
+    <a href="/">Ver todos os cursos</a>
   </footer>
+</div>
 
-  <script>
-    if (typeof fbq === 'function') {
-      fbq('track', 'ViewContent', {
-        value: 990,
-        currency: 'BRL',
-        content_name: 'Imersão Fullmotion',
-        content_type: 'product'
+<div class="fixo" id="fixo"><a class="cta wa" href="#" data-onde="fixo">Quero fazer a imersão · R$ 990</a></div>
+
+<script>
+  var WHATS = 'https://wa.me/5521974620109?text=' +
+      encodeURIComponent('Quero saber da Imersão Fullmotion');
+
+  var PRODUTO = {
+    content_ids: ['imersao-fullmotion'],
+    content_name: 'Imersão Fullmotion',
+    content_type: 'product',
+    value: 990.00,
+    currency: 'BRL'
+  };
+  window.FM_PRODUTO = PRODUTO;
+  if (typeof fbq === 'function') { fbq('track', 'ViewContent', PRODUTO); }
+
+  document.querySelectorAll('a.wa').forEach(function (el) {
+    el.setAttribute('href', WHATS);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+    el.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'imersao_interesse', onde: el.dataset.onde });
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'ImersaoInteresse', { onde: el.dataset.onde });
+      }
+    });
+  });
+
+  document.querySelectorAll('.abas button').forEach(function (bt) {
+    bt.addEventListener('click', function () {
+      document.querySelectorAll('.abas button').forEach(function (o) {
+        o.setAttribute('aria-selected', o === bt ? 'true' : 'false');
       });
-    }
-  </script>
+      document.querySelectorAll('.painel').forEach(function (p) {
+        p.classList.toggle('on', p.id === bt.dataset.p);
+      });
+    });
+  });
+
+  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revs = [].slice.call(document.querySelectorAll('.rev'));
+  if (!calmo) { document.documentElement.classList.add('anim'); }
+  function revela() {
+    revs.forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) { el.classList.add('ok'); }
+    });
+  }
+
+  if (!calmo) {
+    document.querySelectorAll('.nums .n').forEach(function (el) {
+      var alvo = +el.dataset.n, de = alvo === 0 ? 9 : 0, t0 = null;
+      function passo(t) {
+        if (!t0) t0 = t;
+        var k = Math.min((t - t0) / 900, 1);
+        el.textContent = Math.round(de + (alvo - de) * k);
+        if (k < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    });
+
+    var luz = document.getElementById('luz');
+    window.addEventListener('pointermove', function (e) {
+      luz.style.setProperty('--mx', e.clientX + 'px');
+      luz.style.setProperty('--my', e.clientY + 'px');
+    });
+    document.querySelectorAll('.card').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--x', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  var barra = document.getElementById('barra'), fixo = document.getElementById('fixo');
+  function rolou() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    barra.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    fixo.classList.toggle('on', h.scrollTop > 520 && h.scrollTop < max - 260);
+    revela();
+  }
+  window.addEventListener('scroll', rolou, { passive: true });
+  rolou();
+</script>
+<script src="/js/rastreio.js" defer></script>
 </body>
-            </html>
+</html>
